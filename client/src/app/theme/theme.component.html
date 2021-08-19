@@ -1,4 +1,4 @@
-<div class="theme-title">
+<div *ngIf="themes" class="theme-title">
 
 <!-- theme component  -->
 <div *ngFor="let item of themes" class="theme-container">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="subscribers">
                     <!-- <button class="subscribe">Subscribe</button> -->
-                    <p>Subscribers: <span>{{item.subscribers}}</span></p>
+                    <p>Subscribers: <span>{{item.subscribers.length}}</span></p>
                 </div>
             </div>
         </div>
@@ -24,3 +24,4 @@
 </div>
 
 </div>
+<div *ngIf="!themes">Loading...</div>

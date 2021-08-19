@@ -8,10 +8,10 @@ export class ContentService {
   constructor(private http: HttpClient) { }
   
   loadThemes() {
-    return this.http.get<ITheme[]>('http://localhost:3000/api/themes');
+    return this.http.get<ITheme[]>('http://localhost:3000/api/themes?sortby=subsribers.length');
   }
 
   loadPosts() {
-    return this.http.get<IPost[]>('http://localhost:3000/api/posts?limit=5');
+    return this.http.get<IPost[]>('http://localhost:3000/api/posts?limit=5&sortby=created_at');
   }
 }
