@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  constructor() { }
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
 
-  ngOnInit(): void {
+  constructor(private userService: UserService) { }
+
+  register(email: string, password: string): void {
+    throw new Error('Method not implemented.');
+    
   }
 
 }
