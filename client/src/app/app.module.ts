@@ -9,10 +9,12 @@ import { HomeComponent } from './shared/home/home.component';
 import { ThemeModule } from './theme/theme.module';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/user.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
