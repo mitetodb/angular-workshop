@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
 import { RouterModule } from '@angular/router';
 import { LocalStorage } from './injection-tokens';
+import { AuthActivate } from './guards/auth.activate';
 
 
 
@@ -69,7 +70,8 @@ import { LocalStorage } from './injection-tokens';
 
       },
       deps: [PLATFORM_ID]
-    }
+    },
+    AuthActivate
   ]
 })
 export class CoreModule { }
