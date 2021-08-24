@@ -1,3 +1,7 @@
+<app-home *ngIf="isLogged"></app-home>
+
+<div class="container">
+
 <div *ngIf="themes" class="theme-title">
 
     <!-- theme component  -->
@@ -23,5 +27,10 @@
         </div>
     </div>
     
-    </div>
-    <div *ngIf="!themes">Loading...</div>
+</div>
+
+<app-aside title="Recent posts" [items]="posts"></app-aside>
+
+<div *ngIf="!themes">Loading...</div>
+
+</div>

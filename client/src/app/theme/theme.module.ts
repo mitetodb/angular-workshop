@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ThemesComponent } from './themes/themes.component';
 import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
+import { AsideComponent } from '../core/aside/aside.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -10,10 +12,12 @@ import { ThemeRoutingModule } from './theme-routing.module';
 @NgModule({
   declarations: [
     ThemesComponent,
-    NewThemeComponent
+    NewThemeComponent,
+    AsideComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ThemeRoutingModule
   ]
 })
