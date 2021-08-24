@@ -8,7 +8,7 @@
     <div *ngFor="let item of themes" class="theme-container">
         <div class="theme-name-wrapper">
             <div class="theme-name">
-                <a href="#" class="normal">
+                <a  [routerLink]="['/themes', item._id]" class="normal">
                     <h2>{{item.themeName}}</h2>
                 </a>
                 <div class="columns">

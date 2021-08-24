@@ -5,6 +5,7 @@ import { NewThemeComponent } from './new-theme/new-theme.component';
 import { ThemeRoutingModule } from './theme-routing.module';
 import { AsideComponent } from '../core/aside/aside.component';
 import { SharedModule } from '../shared/shared.module';
+import { ThemeComponent } from './theme/theme.component';
 
 
 
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ThemesComponent,
     NewThemeComponent,
-    AsideComponent
+    AsideComponent,
+    ThemeComponent
   ],
   imports: [
     CommonModule,

@@ -11,11 +11,18 @@ export class ContentService {
 
   constructor(private http: HttpClient) { }
   
-  loadThemes() {
-    return this.http.get<ITheme[]>(API_URL + '/themes?sortby=subsribers.length');
+  loadTheme(id: string) {
+    return this.http.get<ITheme>(`${API_URL}/themes/${id}`);
   }
 
-  loadPosts() {
-    return this.http.get<IPost[]>(API_URL + '/posts?limit=5&sortby=created_at');
+  loadThemes() {
+    return this.http.get<ITheme[]>(`${API_URL}/themes?sortby=subsribers.length`);
+  }
+
+  loadPosts(limit?: number) {
+    const query = limit ? `?limit=${limit}` : '';
+    return this.http.get<IPost[]>(`${API_URL}/posts${query}`);
+
+    //return this.http.get<IPost[]>(API_URL + '/posts?limit=5&sortby=created_at');
   }
 }
