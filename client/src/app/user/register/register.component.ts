@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { emailValidator, sameValueAsFactory } from 'src/app/shared/validators';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,15 +10,21 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent {
 
-  get isLogged(): boolean {
-    return this.userService.isLogged;
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder) { 
+    this.form = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['', [Validators.required, emailValidator]],
+      tel: [''],
+      password: ['', [Validators.required, Validators.minLength(4)]],
+      rePassword: ['', [Validators.required, sameValueAsFactory(() => this.form?.get('password'))]]
+    });
   }
 
-  constructor(private userService: UserService) { }
-
-  register(email: string, password: string): void {
-    throw new Error('Method not implemented.');
-    
+  register(): void {
+    if (this.form.invalid) { return; }
+    console.log(this.form.value);
   }
 
 }
